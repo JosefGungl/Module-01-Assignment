@@ -9,6 +9,17 @@ $(function(){
         toast.currentTime = 0;
         // play audio
         toast.play();
+        //use specific product
+        $('#product').html($(this).data('product'));
+        $('#code').html($(this).data('code'));
         $('#toast').toast({ autohide: false }).toast('show');
     });
 });
+
+
+$(document).keydown(function(e) {
+    //escape to close toast
+    if (e.key == "Escape") {
+        $('#toast').toast('hide');
+    }
+})
